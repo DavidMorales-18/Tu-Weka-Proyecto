@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ViewChild, ElementRef } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 import { Observable } from 'rxjs';
 //import { DataService } from '../../services/data.service';
 
@@ -60,9 +61,12 @@ export class AdminPage implements OnInit {
       }
     ]
     menu:Observable<any>;
-  constructor() { }
+  constructor(private menu1:MenuController) { }
   ngOnInit(): void {
     
+  }
+  openMenu(){
+    this.menu1.toggle();
   }
 
   ionViewDidEnter() {
